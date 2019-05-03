@@ -68,6 +68,8 @@ export default class AutoTags extends Component {
   };
 
   filterData = query => {
+    return this.props.suggestions;
+    
     if (!query || query.trim() == "" || !this.props.suggestions) {
       return;
     }
@@ -117,7 +119,6 @@ export default class AutoTags extends Component {
           controlled={true}
           placeholder={this.props.placeholder}
           defaultValue={query}
-          value={query}
           onChangeText={text => this.handleInput(text)}
           onSubmitEditing={this.onSubmitEditing}
           multiline={true}
